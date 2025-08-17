@@ -34,23 +34,6 @@ const Education = () => (
                     <span className="stat-label">Current CGPA</span>
                     <span className="stat-value">8.88*</span>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-label">Progress</span>
-                    <div className="progress-ring">
-                      <svg width="60" height="60">
-                        <circle cx="30" cy="30" r="25" fill="none" stroke="rgba(14,165,233,0.2)" strokeWidth="4"/>
-                        <circle cx="30" cy="30" r="25" fill="none" stroke="url(#gradient)" strokeWidth="4" 
-                                strokeDasharray="157" strokeDashoffset="31.4" strokeLinecap="round"/>
-                        <defs>
-                          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#10b981"/>
-                            <stop offset="100%" stopColor="#3b82f6"/>
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <span className="progress-text">80%</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

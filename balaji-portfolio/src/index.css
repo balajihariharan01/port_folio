@@ -169,12 +169,12 @@ a { color: inherit; text-decoration: none; }
     display: flex;
   }
 
-  .nav {
+  .desktop-nav {
     display: none;
   }
 
-  .nav.mobile-open {
-    display: flex;
+  .mobile-nav-panel {
+    display: block;
   }
 }
 
@@ -190,6 +190,206 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   z-index: 100;
   position: relative;
+}
+
+/* Enhanced Mobile Navigation Panel */
+.mobile-nav-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(7, 11, 23, 0.98) 0%, 
+    rgba(13, 20, 38, 0.95) 50%, 
+    rgba(7, 11, 23, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  display: none;
+}
+
+.mobile-nav-panel.open {
+  right: 0;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 23, 0.8);
+}
+
+.mobile-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.mobile-brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mobile-close-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+}
+
+.mobile-close-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-nav-content {
+  padding: 20px;
+}
+
+.mobile-nav-section {
+  margin-bottom: 32px;
+}
+
+.mobile-nav-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.3);
+  color: var(--accent);
+  transform: translateX(8px);
+}
+
+.mobile-nav-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.mobile-nav-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.mobile-action-btn.primary {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--accent);
+}
+
+.mobile-action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+}
+
+.mobile-action-btn.secondary {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mobile-action-btn.secondary:hover {
+  background: rgba(96, 165, 250, 0.1);
+  transform: translateY(-2px);
+}
+
+.action-arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.mobile-action-btn:hover .action-arrow {
+  transform: translateX(4px);
+}
+
+.mobile-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.contact-icon {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.mobile-contact-item span:last-child {
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .mobile-menu-btn span {
@@ -230,6 +430,17 @@ a { color: inherit; text-decoration: none; }
 .nav { 
   display: flex; 
   gap: 24px; 
+}
+
+/* Hide mobile navigation on desktop */
+.mobile-nav-panel {
+  display: none;
+}
+
+/* Desktop navigation styles */
+.desktop-nav {
+  display: flex;
+  gap: 24px;
 }
 
 /* Mobile navigation styles */
@@ -1127,22 +1338,36 @@ a { color: inherit; text-decoration: none; }
 
   /* ===== PERFECT CONTAINER ALIGNMENT ===== */
   .container {
-    padding: 0 20px;
+    padding: 0 24px;
     max-width: 100%;
     margin: 0 auto;
   }
 
   .section {
-    padding: 60px 0;
+    padding: 80px 0;
     margin: 0;
   }
 
   /* ===== PERFECT TYPOGRAPHY ALIGNMENT ===== */
   .section-title {
-    font-size: 28px;
-    margin-bottom: 24px;
+    font-size: 32px;
+    margin-bottom: 28px;
     text-align: center;
     line-height: 1.2;
+    padding: 0 16px;
+  }
+
+  .section-title-row {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
   }
 
   .section-body {
@@ -1151,11 +1376,12 @@ a { color: inherit; text-decoration: none; }
     text-align: center;
     margin: 0 auto;
     max-width: 100%;
+    padding: 0 16px;
   }
 
   /* ===== PERFECT HEADER ALIGNMENT ===== */
   .header {
-    padding: 16px 20px;
+    padding: 16px 24px;
   }
 
   .header .inner {
@@ -1170,114 +1396,241 @@ a { color: inherit; text-decoration: none; }
     font-weight: 700;
   }
 
-  .nav {
-    width: 280px;
-    right: -280px;
+  /* ===== ENHANCED MOBILE NAVIGATION PANEL ===== */
+  .mobile-nav-panel {
+    width: 100%;
+    right: -100%;
+    background: linear-gradient(135deg, 
+      rgba(7, 11, 23, 0.99) 0%, 
+      rgba(13, 20, 38, 0.97) 50%, 
+      rgba(7, 11, 23, 0.99) 100%);
   }
 
-  .nav a {
-    padding: 18px 24px;
+  .mobile-nav-panel.open {
+    right: 0;
+  }
+
+  .mobile-nav-header {
+    padding: 20px 16px;
+    background: rgba(7, 11, 23, 0.9);
+  }
+
+  .mobile-nav-brand {
+    gap: 10px;
+  }
+
+  .mobile-brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-brand-text {
     font-size: 16px;
-    text-align: center;
+  }
+
+  .mobile-nav-content {
+    padding: 16px;
+  }
+
+  .mobile-nav-section {
+    margin-bottom: 28px;
+  }
+
+  .mobile-nav-title {
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+  }
+
+  .mobile-nav-links {
+    gap: 6px;
+  }
+
+  .mobile-nav-link {
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 10px;
+  }
+
+  .mobile-nav-link:hover {
+    transform: translateX(6px);
+  }
+
+  .mobile-nav-icon {
+    font-size: 18px;
+    width: 22px;
+  }
+
+  .mobile-nav-actions {
+    gap: 10px;
+  }
+
+  .mobile-action-btn {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .mobile-contact-info {
+    gap: 10px;
+  }
+
+  .mobile-contact-item {
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+
+  .contact-icon {
+    font-size: 16px;
+    width: 18px;
+  }
+
+  .mobile-contact-item span:last-child {
+    font-size: 13px;
   }
 
   /* ===== PERFECT HERO ALIGNMENT ===== */
   .hero {
-    padding: 80px 0 60px;
+    padding: 100px 0 80px;
+    text-align: center;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
     text-align: center;
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-align: center;
+    padding: 0 16px;
   }
 
-  .hero p {
+  .hero .eyebrow {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero .lead {
     font-size: 18px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     text-align: center;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 16px;
+    line-height: 1.7;
   }
 
-  .hero-actions {
+  .hero .actions {
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 40px;
   }
 
-  .btn {
+  .hero .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     padding: 16px 28px;
     font-size: 16px;
     text-align: center;
     border-radius: 12px;
   }
 
+  .hero .meta {
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .hero .meta p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .hero .avatar {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
   /* ===== PERFECT ABOUT ALIGNMENT ===== */
   .about-content {
     text-align: center;
-    padding: 0 10px;
+    padding: 0 20px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .about-content p {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.7;
     text-align: center;
     max-width: 100%;
   }
 
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
   /* ===== PERFECT EDUCATION TIMELINE ALIGNMENT ===== */
   .education-timeline {
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .timeline-container {
-    padding-left: 35px;
+    padding-left: 40px;
     position: relative;
   }
 
   .timeline-container::before {
-    left: 18px;
+    left: 20px;
     width: 3px;
   }
 
   .timeline-marker {
-    left: -26px;
-    width: 28px;
-    height: 28px;
+    left: -30px;
+    width: 32px;
+    height: 32px;
     top: 20px;
   }
 
   .marker-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
 
   .timeline-content {
-    padding: 20px;
-    margin-bottom: 28px;
+    padding: 24px;
+    margin-bottom: 32px;
     border-radius: 16px;
     text-align: left;
   }
 
   .education-title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 12px;
     line-height: 1.3;
   }
 
   .education-institution {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 16px;
     line-height: 1.4;
   }
@@ -1285,14 +1638,14 @@ a { color: inherit; text-decoration: none; }
   .education-stats {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-top: 16px;
+    margin-top: 20px;
   }
 
   .education-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .education-badge {
@@ -1309,37 +1662,37 @@ a { color: inherit; text-decoration: none; }
   /* ===== PERFECT PROJECTS ALIGNMENT ===== */
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 10px;
+    gap: 32px;
+    padding: 0 20px;
   }
 
   .project {
-    padding: 24px;
+    padding: 28px;
     border-radius: 20px;
     text-align: left;
   }
 
   .project-title {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 22px;
+    margin-bottom: 18px;
     line-height: 1.3;
   }
 
   .project p {
-    font-size: 15px;
-    margin-bottom: 16px;
+    font-size: 16px;
+    margin-bottom: 18px;
     line-height: 1.6;
   }
 
   .project-head {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
   }
 
   .project-logo {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 
   .project-overlay {
@@ -1350,19 +1703,30 @@ a { color: inherit; text-decoration: none; }
   }
 
   .project-content {
-    padding: 16px;
+    padding: 20px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .project-actions .btn {
+    width: 100%;
+    text-align: center;
   }
 
   /* ===== PERFECT SKILLS ALIGNMENT ===== */
   .skills-hero {
-    margin-bottom: 48px;
+    margin-bottom: 56px;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .skills-intro h3 {
-    font-size: 28px;
-    margin-bottom: 16px;
+    font-size: 32px;
+    margin-bottom: 20px;
     line-height: 1.2;
   }
 
@@ -1373,76 +1737,76 @@ a { color: inherit; text-decoration: none; }
   }
 
   .skill-category-modern {
-    margin-bottom: 40px;
-    padding: 0 10px;
+    margin-bottom: 48px;
+    padding: 0 20px;
   }
 
   .category-header-modern {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     text-align: center;
   }
 
   .category-title-modern {
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 26px;
+    margin-bottom: 20px;
     line-height: 1.2;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
   }
 
   .skill-card {
-    padding: 20px;
+    padding: 24px;
     border-radius: 20px;
     text-align: left;
   }
 
   .skill-name-modern {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 12px;
     line-height: 1.3;
   }
 
   .skill-description-modern {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
   }
 
   .skills-summary {
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 60px;
-    padding: 0 10px;
+    gap: 32px;
+    margin-top: 72px;
+    padding: 0 20px;
   }
 
   .summary-card {
-    padding: 24px;
+    padding: 28px;
     border-radius: 20px;
     text-align: center;
   }
 
   .skill-logo-modern {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
 
   .category-icon-modern {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 
   /* ===== PERFECT RESUME ALIGNMENT ===== */
   .resume-simple {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 0 10px;
+    gap: 40px;
+    padding: 0 20px;
   }
 
   .resume-profile {
     text-align: center;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .resume-actions {
@@ -1454,32 +1818,32 @@ a { color: inherit; text-decoration: none; }
 
   .resume-actions .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
 
   /* ===== PERFECT CERTIFICATES ALIGNMENT ===== */
   .cert-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 10px;
+    gap: 32px;
+    padding: 0 20px;
   }
 
   .cert-card {
-    padding: 24px;
+    padding: 28px;
     border-radius: 20px;
     text-align: left;
   }
 
   .cert-title {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 22px;
+    margin-bottom: 18px;
     line-height: 1.3;
   }
 
   .cert-actions {
     flex-direction: column;
     gap: 16px;
-    margin-top: 20px;
+    margin-top: 24px;
   }
 
   .cert-actions .btn {
@@ -1490,115 +1854,473 @@ a { color: inherit; text-decoration: none; }
   /* ===== PERFECT CONTACT ALIGNMENT ===== */
   .contact-form {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 10px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 16px 20px;
-    font-size: 16px;
-    border-radius: 12px;
-    width: 100%;
-  }
-
-  .form-group textarea {
-    min-height: 140px;
-    resize: vertical;
-  }
-
-  .contact-submit {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 16px 28px;
-  }
-
-  /* ===== PERFECT FOOTER ALIGNMENT ===== */
-  .footer {
-    padding: 48px 0;
-    text-align: center;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
     gap: 32px;
     padding: 0 20px;
   }
 
-  .footer-section h3 {
-    font-size: 20px;
-    margin-bottom: 16px;
-    line-height: 1.2;
+  .form-group input,
+  .form-group textarea {
+    padding: 18px 24px;
+    font-size: 16px;
+    border-radius: 12px;
   }
 
-  .footer-section p,
-  .footer-section a {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* ===== PERFECT MOBILE MENU ALIGNMENT ===== */
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .nav.mobile-open {
-    display: block;
-  }
-
-  /* ===== PERFECT MOBILE INTERACTION ALIGNMENT ===== */
-  .card:hover,
-  .skill-card:hover,
-  .project:hover,
-  .cert-card:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-  }
-
-  .timeline-content:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-  }
-
-  /* Remove complex animations on mobile */
-  .skill-card-glow,
-  .project-card-glow,
-  .cert-card-glow {
-    display: none;
-  }
-
-  /* ===== PERFECT MOBILE SPACING ALIGNMENT ===== */
-  .section:first-child {
-    padding-top: 80px;
-  }
-
-  .section:last-child {
-    padding-bottom: 80px;
-  }
-
-  /* ===== PERFECT MOBILE GRID ALIGNMENT ===== */
-  .grid,
-  .skills-grid,
-  .project-grid,
-  .cert-grid {
-    margin: 0;
+  .contact-actions {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     width: 100%;
   }
 
-  /* ===== PERFECT MOBILE CARD ALIGNMENT ===== */
+  .contact-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* ===== PERFECT BUTTON ALIGNMENT ===== */
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 16px 28px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* ===== PERFECT CARD ALIGNMENT ===== */
   .card,
   .skill-card,
   .project,
   .cert-card,
+  .resume-profile,
   .summary-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* ===== PERFECT SPACING ALIGNMENT ===== */
+  .section + .section {
+    margin-top: 0;
+  }
+
+  /* ===== PERFECT FORM ALIGNMENT ===== */
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* ===== PERFECT TIMELINE ALIGNMENT ===== */
+  .timeline-container {
+    position: relative;
+  }
+
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* ===== PERFECT GRID ALIGNMENT ===== */
+  .grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .grid-1 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+
+  /* ===== PERFECT MOBILE LAYOUT ALIGNMENT ===== */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .education-timeline {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .project-grid,
+  .skills-grid,
+  .cert-grid {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* ===== DIFFERENT MOBILE ALIGNMENT STYLES ===== */
+  
+  /* Style 1: Left-Aligned Layout */
+  .mobile-align-left .section-title {
+    text-align: left;
+    padding: 0;
+  }
+
+  .mobile-align-left .section-title-row {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .mobile-align-left .section-icon {
     margin: 0;
+  }
+
+  .mobile-align-left .section-body {
+    text-align: left;
+    padding: 0;
+  }
+
+  .mobile-align-left .about-content {
+    text-align: left;
+    padding: 0;
+  }
+
+  .mobile-align-left .hero {
+    text-align: left;
+  }
+
+  .mobile-align-left .hero h1,
+  .mobile-align-left .hero .lead {
+    text-align: left;
+    padding: 0;
+  }
+
+  .mobile-align-left .hero .actions {
+    align-items: flex-start;
+  }
+
+  .mobile-align-left .hero .btn {
+    margin: 0;
+  }
+
+  /* Style 2: Card-Based Layout */
+  .mobile-align-cards .section {
+    padding: 40px 0;
+  }
+
+  .mobile-align-cards .section-title {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(96, 165, 250, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-align-cards .section-body {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  .mobile-align-cards .about-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  /* Style 3: Compact Layout */
+  .mobile-align-compact .section {
+    padding: 40px 0;
+  }
+
+  .mobile-align-compact .section-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .mobile-align-compact .section-title-row {
+    margin-bottom: 20px;
+  }
+
+  .mobile-align-compact .section-body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .mobile-align-compact .hero {
+    padding: 60px 0 40px;
+  }
+
+  .mobile-align-compact .hero h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .mobile-align-compact .hero .lead {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Style 4: Spacious Layout */
+  .mobile-align-spacious .section {
+    padding: 120px 0;
+  }
+
+  .mobile-align-spacious .section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .mobile-align-spacious .section-title-row {
+    margin-bottom: 60px;
+  }
+
+  .mobile-align-spacious .section-body {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .mobile-align-spacious .hero {
+    padding: 140px 0 100px;
+  }
+
+  .mobile-align-spacious .hero h1 {
+    font-size: 44px;
+    margin-bottom: 32px;
+  }
+
+  .mobile-align-spacious .hero .lead {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Style 5: Modern Grid Layout */
+  .mobile-align-modern .section {
+    padding: 60px 0;
+  }
+
+  .mobile-align-modern .section-title {
+    position: relative;
+    padding-bottom: 16px;
+  }
+
+  .mobile-align-modern .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+  }
+
+  .mobile-align-modern .section-body {
+    position: relative;
+    padding: 24px 0;
+  }
+
+  .mobile-align-modern .section-body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+  }
+
+  /* Style 6: Minimalist Layout */
+  .mobile-align-minimal .section {
+    padding: 60px 0;
+  }
+
+  .mobile-align-minimal .section-title {
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--text);
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+
+  .mobile-align-minimal .section-title-row {
+    margin-bottom: 24px;
+  }
+
+  .mobile-align-minimal .section-icon {
+    opacity: 0.7;
+  }
+
+  .mobile-align-minimal .section-body {
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  /* ===== PERFECT MOBILE SPACING ALIGNMENT ===== */
+  .section-title-row {
+    margin-bottom: 32px;
+  }
+
+  .section-body {
+    margin-bottom: 0;
+  }
+
+  /* ===== PERFECT MOBILE CARD SPACING ===== */
+  .card,
+  .skill-card,
+  .project,
+  .cert-card,
+  .resume-profile,
+  .summary-card {
+    margin-bottom: 24px;
+  }
+
+  .card:last-child,
+  .skill-card:last-child,
+  .project:last-child,
+  .cert-card:last-child,
+  .resume-profile:last-child,
+  .summary-card:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ===== PERFECT FLEX ALIGNMENT ===== */
+  .flex {
+    display: flex;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .w-full {
     width: 100%;
-    box-sizing: border-box;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .px-4 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .py-4 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+
+  .mb-6 {
+    margin-bottom: 24px;
+  }
+
+  .mb-8 {
+    margin-bottom: 32px;
+  }
+
+  .gap-4 {
+    gap: 16px;
+  }
+
+  .gap-6 {
+    gap: 24px;
+  }
+
+  .gap-8 {
+    gap: 32px;
+  }
+
+  /* ===== PERFECT MOBILE VISUAL ALIGNMENT ===== */
+  .blob {
+    width: 300px;
+    height: 300px;
+    filter: blur(60px);
+  }
+
+  .blob.b1 {
+    left: -60px;
+    top: -40px;
+  }
+
+  .blob.b2 {
+    right: -40px;
+    top: 120px;
+  }
+
+  /* ===== PERFECT MOBILE ANIMATION ALIGNMENT ===== */
+  .reveal {
+    transform: translateY(15px);
+  }
+
+  .reveal.in-view {
+    transform: translateY(0);
+  }
+
+  /* ===== PERFECT MOBILE SHADOW ALIGNMENT ===== */
+  .card,
+  .skill-card,
+  .project,
+  .cert-card,
+  .resume-profile,
+  .summary-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* ===== PERFECT MOBILE BORDER ALIGNMENT ===== */
+  .timeline-content,
+  .project,
+  .skill-card,
+  .cert-card {
+    border: 1px solid var(--border);
+  }
+
+  /* ===== PERFECT MOBILE FOCUS ALIGNMENT ===== */
+  .btn:focus,
+  .nav a:focus,
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 }
 
@@ -1669,14 +2391,14 @@ a { color: inherit; text-decoration: none; }
   .btn,
   .nav a,
   .project-actions a {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 48px;
+    min-width: 48px;
   }
 
   .timeline-marker,
   .marker-icon {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 48px;
+    min-height: 48px;
   }
 
   /* Improve touch scrolling */
@@ -1692,6 +2414,40 @@ a { color: inherit; text-decoration: none; }
   .timeline-content:hover {
     transform: none;
     box-shadow: var(--shadow);
+  }
+
+  /* Enhanced touch targets for mobile */
+  .section-icon {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .project-logo,
+  .skill-logo-modern,
+  .category-icon-modern {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Better touch spacing */
+  .nav a {
+    padding: 16px 24px;
+    margin: 4px 0;
+  }
+
+  .timeline-content {
+    margin-bottom: 20px;
+  }
+
+  /* Improved mobile navigation */
+  .mobile-menu-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+  }
+
+  .mobile-menu-btn span {
+    height: 4px;
   }
 }
 
@@ -2074,7 +2830,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (min-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     max-width: 1200px;
   }
@@ -4758,93 +5514,283 @@ html {
 
 /* Small mobile devices (up to 480px) */
 @media (max-width: 480px) {
+  /* ===== PERFECT SMALL MOBILE CONTAINER ALIGNMENT ===== */
   .container {
-    padding: 0 16px;
+    padding: 0 20px;
   }
   
   .section {
-    padding: 50px 0;
+    padding: 60px 0;
   }
   
+  /* ===== PERFECT SMALL MOBILE HERO ALIGNMENT ===== */
   .hero {
-    padding: 70px 0 50px;
+    padding: 80px 0 60px;
   }
   
   .hero h1 {
-    font-size: 32px;
+    font-size: 36px;
+    padding: 0 12px;
   }
   
-  .hero p {
-    font-size: 15px;
+  .hero .eyebrow {
+    font-size: 11px;
+    padding: 5px 10px;
   }
   
-  .avatar {
-    width: 120px;
-    height: 120px;
+  .hero .lead {
+    font-size: 16px;
+    padding: 0 12px;
   }
   
+  .hero .avatar {
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* ===== PERFECT SMALL MOBILE TYPOGRAPHY ALIGNMENT ===== */
   .section-title {
-    font-size: 24px;
+    font-size: 28px;
+    padding: 0 12px;
+  }
+  
+  .section-title-row {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .section-icon {
+    width: 36px;
+    height: 36px;
   }
   
   .section-body {
     font-size: 15px;
+    padding: 0 12px;
   }
   
+  /* ===== PERFECT SMALL MOBILE TIMELINE ALIGNMENT ===== */
   .timeline-container {
-    padding-left: 30px;
+    padding-left: 32px;
   }
   
   .timeline-container::before {
-    left: 15px;
+    left: 16px;
   }
   
   .timeline-marker {
-    left: -25px;
-    width: 40px;
-    height: 40px;
+    left: -24px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .marker-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
   
   .timeline-content {
     padding: 20px;
+    margin-bottom: 24px;
   }
   
   .education-title {
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .education-institution {
-    font-size: 13px;
+    font-size: 14px;
   }
   
+  /* ===== PERFECT SMALL MOBILE CARD ALIGNMENT ===== */
   .skill-card,
-  .project-card,
+  .project,
   .cert-card,
   .resume-profile,
-  .contact-form {
+  .summary-card {
     padding: 20px;
   }
   
+  /* ===== PERFECT SMALL MOBILE BUTTON ALIGNMENT ===== */
   .btn {
-    padding: 12px 20px;
-    font-size: 13px;
+    padding: 14px 24px;
+    font-size: 14px;
+    max-width: 240px;
   }
   
+  .hero .btn,
+  .resume-actions .btn,
+  .contact-actions .btn {
+    max-width: 240px;
+  }
+  
+  /* ===== PERFECT SMALL MOBILE NAVIGATION ALIGNMENT ===== */
   .nav {
-    width: 280px;
-    padding: 80px 20px 20px;
+    width: 260px;
+    padding: 80px 16px 20px;
   }
   
   .nav a {
     font-size: 15px;
-    padding: 12px 16px;
+    padding: 14px 20px;
   }
   
-  .hero-actions .btn,
-  .resume-actions .btn,
-  .contact-actions .btn,
-  .actions .btn {
-    max-width: 180px;
+  /* ===== PERFECT SMALL MOBILE GRID ALIGNMENT ===== */
+  .project-grid,
+  .skills-grid,
+  .cert-grid {
+    gap: 20px;
+    padding: 0 16px;
+  }
+  
+  /* ===== PERFECT SMALL MOBILE FORM ALIGNMENT ===== */
+  .contact-form {
+    gap: 24px;
+    padding: 0 16px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  
+  /* ===== PERFECT SMALL MOBILE SPACING ALIGNMENT ===== */
+  .section {
+    padding: 60px 0;
+  }
+  
+  .hero {
+    padding: 80px 0 60px;
+  }
+  
+  .about-content {
+    padding: 0 16px;
+  }
+  
+  .education-timeline {
+    padding: 0 16px;
+  }
+  
+  .skills-hero {
+    padding: 0 16px;
+  }
+  
+  .skill-category-modern {
+    padding: 0 16px;
+  }
+  
+  .skills-summary {
+    padding: 0 16px;
+  }
+  
+  .resume-simple {
+    padding: 0 16px;
+  }
+  
+  .resume-profile {
+    padding: 0 16px;
+  }
+
+  /* ===== SMALL MOBILE ALIGNMENT STYLES ===== */
+  
+  /* Enhanced Mobile Navigation for Small Screens */
+  .mobile-nav-panel {
+    width: 100%;
+    right: -100%;
+  }
+
+  .mobile-nav-header {
+    padding: 16px 12px;
+  }
+
+  .mobile-nav-brand {
+    gap: 8px;
+  }
+
+  .mobile-brand-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobile-brand-text {
+    font-size: 14px;
+  }
+
+  .mobile-nav-content {
+    padding: 12px;
+  }
+
+  .mobile-nav-section {
+    margin-bottom: 24px;
+  }
+
+  .mobile-nav-title {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .mobile-nav-links {
+    gap: 4px;
+  }
+
+  .mobile-nav-link {
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .mobile-nav-icon {
+    font-size: 16px;
+    width: 20px;
+  }
+
+  .mobile-action-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .mobile-contact-info {
+    gap: 8px;
+  }
+
+  .mobile-contact-item {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .contact-icon {
+    font-size: 14px;
+    width: 16px;
+  }
+
+  /* Small Mobile Alignment Style Adjustments */
+  .mobile-align-left .section-title {
+    font-size: 24px;
+    padding: 0 8px;
+  }
+
+  .mobile-align-cards .section-title {
+    padding: 12px 16px;
+    font-size: 22px;
+  }
+
+  .mobile-align-compact .section-title {
+    font-size: 20px;
+  }
+
+  .mobile-align-spacious .section-title {
+    font-size: 28px;
+  }
+
+  .mobile-align-modern .section-title::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  .mobile-align-minimal .section-title {
+    font-size: 22px;
   }
 }
 
