@@ -128,7 +128,9 @@ const Header = () => {
               </div>
             </div>
             
-           
+            <div className="mobile-actions">
+             
+            </div>
           </div>
         </div>
         
