@@ -132,6 +132,11 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between; 
   padding: 20px 0; 
 }
+
+/* Mobile menu button - hidden on desktop */
+.mobile-menu-btn {
+  display: none;
+}
 .brand { 
   font-weight: 800; 
   font-size: 20px; 
@@ -583,9 +588,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .timeline-content:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  border-color: rgba(14,165,233,.3);
+  /* Hover effects removed for education module */
 }
 
 .education-header {
@@ -641,7 +644,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .timeline-content:hover .education-title {
-  color: var(--accent);
+  /* Title color change on hover removed */
 }
 
 .education-institution {
@@ -1807,7 +1810,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Enhanced section dividers and global improvements */
-.section { 
+.section {
   position: relative; 
   overflow: hidden;
 }
@@ -1856,7 +1859,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
-.card:hover::before, .skill-card:hover::before, .project:hover::before, .education-card:hover::before, .timeline-content:hover::before {
+.card:hover::before, .skill-card:hover::before, .project:hover::before, .education-card:hover::before {
   left: 100%;
 }
 
@@ -2180,7 +2183,7 @@ a { color: inherit; text-decoration: none; }
     font-size: 28px;
   }
   
-  .avatar {
+.avatar {
     width: 240px;
     height: 240px;
   }
@@ -2249,7 +2252,7 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes slideInFromLeft {
   0% {
-    opacity: 0;
+  opacity: 0;
     transform: translateX(-100px);
   }
   100% {
@@ -2260,7 +2263,7 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes slideInFromRight {
   0% {
-    opacity: 0;
+  opacity: 0;
     transform: translateX(100px);
   }
   100% {
@@ -2275,8 +2278,8 @@ a { color: inherit; text-decoration: none; }
     transform: translateY(-50px);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
   }
 }
 
@@ -2442,5 +2445,725 @@ html {
   .section {
     padding: 20px 0;
     page-break-inside: avoid;
+  }
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  /* Container and general layout */
+  .container {
+    padding: 0 16px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  /* Typography adjustments */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .section-body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .section-body p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Header mobile styles */
+  .header {
+    padding: 12px 0;
+  }
+  
+  .nav {
+    gap: 12px;
+  }
+  
+  .nav a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  /* Hero section mobile */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .hero-actions .btn {
+  width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Avatar mobile */
+  .avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+  }
+  
+  /* About section mobile */
+  .about-content {
+    gap: 16px;
+  }
+  
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Education timeline mobile */
+  .education-timeline {
+    gap: 24px;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .timeline-marker {
+    align-self: center;
+  }
+  
+  .timeline-content {
+    text-align: center;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .education-title {
+    font-size: 18px;
+  }
+  
+  .education-institution {
+    font-size: 14px;
+  }
+  
+  .education-stats {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  /* Skills grid mobile */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .skill-card {
+    padding: 20px;
+  }
+  
+  .skill-name-modern {
+    font-size: 18px;
+  }
+  
+  .skill-description-modern {
+    font-size: 14px;
+  }
+  
+  /* Projects grid mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-card {
+    padding: 20px;
+  }
+  
+  .project-title {
+    font-size: 18px;
+  }
+  
+  .project-description {
+    font-size: 14px;
+  }
+  
+  .project-tech {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .tech-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  /* Certificates grid mobile */
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cert-card {
+    padding: 20px;
+  }
+  
+  .cert-title {
+    font-size: 16px;
+  }
+  
+  .cert-meta {
+    font-size: 14px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .actions .btn {
+    width: 100%;
+  }
+  
+  /* Resume mobile */
+  .resume-simple {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .resume-profile {
+    padding: 20px;
+  }
+  
+  .resume-profile h3 {
+    font-size: 20px;
+  }
+  
+  .resume-profile h4 {
+    font-size: 16px;
+  }
+  
+  .resume-skills li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .resume-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .resume-actions .btn {
+    width: 100%;
+  }
+  
+  .pdf-container {
+    height: 400px;
+  }
+  
+  /* Contact form mobile */
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .input,
+  .textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .contact-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .contact-actions .btn {
+    width: 100%;
+  }
+  
+  /* Footer mobile */
+  .footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Button mobile adjustments */
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .btn.small {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  /* Card mobile adjustments */
+  .card {
+    padding: 20px;
+  }
+  
+  /* Navigation mobile improvements */
+  .brand {
+    font-size: 18px;
+  }
+  
+  .brand .dot {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+  
+  .mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  
+  .mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+  }
+  
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  /* Mobile navigation */
+  .nav {
+    position: fixed;
+  top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px 24px;
+    gap: 16px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+  }
+  
+  .nav.mobile-open {
+  right: 0;
+  }
+  
+  .nav a {
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .nav a:hover {
+    background: var(--surface-2);
+    border-color: var(--border);
+    transform: translateX(4px);
+  }
+  
+  /* Mobile menu overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+  top: 0;
+  left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .hero {
+    padding: 60px 0 40px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .hero p {
+    font-size: 15px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .section-title {
+    font-size: 22px;
+  }
+  
+  .section-body {
+    font-size: 15px;
+  }
+  
+  .nav a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .project-card,
+  .cert-card,
+  .resume-profile,
+  .contact-form {
+    padding: 16px;
+  }
+  
+  .pdf-container {
+    height: 300px;
+  }
+  
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .marker-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .progress-ring svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skill-logo-modern {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    padding: 40px 0;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .resume-simple {
+    gap: 32px;
+  }
+  
+  .pdf-container {
+    height: 500px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .skill-card:hover {
+    transform: none;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .cert-card:hover {
+    transform: none;
+  }
+  
+  .timeline-item:hover {
+    transform: none;
+  }
+  
+  /* Increase touch targets */
+  .nav a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input,
+  .textarea {
+    min-height: 44px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .avatar {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  .section-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hero h1,
+  .avatar,
+  .btn,
+  .section-title,
+  .nav a,
+  .brand .dot,
+  .card,
+  .reveal,
+  .skill-card,
+  .timeline-item,
+  .timeline-content,
+  .resume-profile,
+  .resume-preview,
+  .pdf-container,
+  .resume-actions .btn,
+  .summary-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070b17;
+    --surface: #0d1426;
+    --surface-2: #0a1021;
+    --border: #1b2642;
+    --text: #eef2f6;
+    --muted: #9fb1c5;
+  }
+}
+
+/* Light mode support for mobile */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --surface-2: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+  
+  body {
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(96,165,250,0.08), transparent 60%),
+      radial-gradient(900px 500px at 85% 0%, rgba(167,139,250,0.06), transparent 55%),
+      linear-gradient(180deg, #ffffff 0%, var(--bg) 35%, #f8fafc 100%);
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Improve touch scrolling */
+  .app {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Improve button touch targets */
+  button, .btn, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for mobile */
+  .section-title-row {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  /* Optimize grid layouts */
+  .hero-grid {
+    gap: 32px;
+  }
+  
+  /* Better card spacing */
+  .card, .project-card, .cert-card, .skill-card {
+    margin-bottom: 16px;
+  }
+  
+  /* Improve PDF viewer on mobile */
+  .pdf-viewer {
+    border: none;
+    border-radius: 8px;
+  }
+  
+  /* Better timeline on mobile */
+  .timeline-item {
+    margin-bottom: 24px;
+  }
+  
+  /* Optimize animations for mobile performance */
+  .skill-card-glow,
+  .project-card-glow,
+  .cert-card-glow {
+    display: none; /* Disable heavy effects on mobile */
   }
 }

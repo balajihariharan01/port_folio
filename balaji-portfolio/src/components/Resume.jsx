@@ -30,19 +30,6 @@ const Resume = () => (
           </a>
         </div>
       </div>
-      
-      <div className="resume-preview">
-        <h4>Resume Preview</h4>
-        <div className="pdf-container">
-          <iframe 
-            src="/balaji%20(2).pdf" 
-            className="pdf-viewer"
-            title="Resume PDF Preview"
-          >
-            <p className="muted">PDF preview unavailable. Please use the buttons above to view or download.</p>
-          </iframe>
-        </div>
-      </div>
     </div>
   </Section>
 )
