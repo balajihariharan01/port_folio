@@ -12,10 +12,12 @@ const Header = () => {
   }, [])
 
   const toggleMobileMenu = () => {
+    console.log('Toggle mobile menu clicked, current state:', mobileMenuOpen)
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
   const closeMobileMenu = () => {
+    console.log('Close mobile menu clicked')
     setMobileMenuOpen(false)
   }
 
@@ -50,7 +52,7 @@ const Header = () => {
         </nav>
         
         {/* New Simple Mobile Dropdown Menu */}
-        <div className={`mobile-menu-dropdown${mobileMenuOpen ? ' open' : ''}`}>
+        <div className={`mobile-menu-dropdown${mobileMenuOpen ? ' open' : ''}`} style={{display: mobileMenuOpen ? 'block' : 'none'}}>
           <div className="mobile-menu-items">
             <a href="#about" onClick={closeMobileMenu} className="mobile-menu-item">
               <span className="menu-icon">👤</span>
