@@ -29,15 +29,15 @@ const Header = () => {
           <span className="brand-gradient">Balaji</span><span className="dot"></span>
         </a>
         
-        {/* Simple Mobile Menu Button */}
+        {/* New Animated Mobile Menu Button */}
         <button 
-          className={`mobile-menu-btn${mobileMenuOpen ? ' active' : ''}`}
+          className={`mobile-menu-btn-new${mobileMenuOpen ? ' active' : ''}`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
         </button>
         
         {/* Desktop Navigation */}
@@ -51,47 +51,93 @@ const Header = () => {
           <a href="#contact">Contact</a>
         </nav>
         
-        {/* New Simple Mobile Dropdown Menu */}
-        <div className={`mobile-menu-dropdown${mobileMenuOpen ? ' open' : ''}`} style={{display: mobileMenuOpen ? 'block' : 'none'}}>
-          <div className="mobile-menu-items">
-            <a href="#about" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">👤</span>
-              <span>About</span>
-            </a>
-            <a href="#education" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">🎓</span>
-              <span>Education</span>
-            </a>
-            <a href="#projects" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">💻</span>
-              <span>Projects</span>
-            </a>
-            <a href="#resume" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">📄</span>
-              <span>Resume</span>
-            </a>
-            <a href="#certificates" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">🏆</span>
-              <span>Certificates</span>
-            </a>
-            <a href="#skills" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">⚡</span>
-              <span>Skills</span>
-            </a>
-            <a href="#contact" onClick={closeMobileMenu} className="mobile-menu-item">
-              <span className="menu-icon">📧</span>
-              <span>Contact</span>
-            </a>
+        {/* New Slide-In Mobile Menu Panel */}
+        <div className={`mobile-menu-panel${mobileMenuOpen ? ' open' : ''}`}>
+          <div className="mobile-menu-header">
+            <div className="mobile-profile">
+              <div className="mobile-avatar">
+                <img src="/profile.jpg" alt="Balaji" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+              </div>
+              <div className="mobile-profile-info">
+                <h3>Balaji Hariharan</h3>
+                <p>Software Developer</p>
+              </div>
+            </div>
+            <button className="mobile-close-btn-new" onClick={closeMobileMenu}>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
           </div>
           
-          <div className="mobile-menu-footer">
-            <div className="mobile-contact-brief">
-              <span>📧 balajihariharanns@gmail.com</span>
-              <span>📱 +91 8754887575</span>
+          <div className="mobile-menu-body">
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">Menu</h4>
+              <div className="mobile-nav-grid">
+                <a href="#about" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">👤</div>
+                  <span>About</span>
+                </a>
+                <a href="#education" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">🎓</div>
+                  <span>Education</span>
+                </a>
+                <a href="#projects" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">💻</div>
+                  <span>Projects</span>
+                </a>
+                <a href="#resume" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">📄</div>
+                  <span>Resume</span>
+                </a>
+                <a href="#certificates" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">🏆</div>
+                  <span>Certificates</span>
+                </a>
+                <a href="#skills" onClick={closeMobileMenu} className="mobile-nav-card">
+                  <div className="nav-card-icon">⚡</div>
+                  <span>Skills</span>
+                </a>
+              </div>
             </div>
-            <a href="#contact" onClick={closeMobileMenu} className="mobile-cta-btn">
-              Get In Touch
-            </a>
+            
+            <div className="mobile-contact-section">
+              <h4 className="mobile-section-title">Get In Touch</h4>
+              <div className="mobile-contact-cards">
+                <a href="mailto:balajihariharanns@gmail.com" className="contact-card">
+                  <div className="contact-icon">📧</div>
+                  <div className="contact-details">
+                    <span className="contact-label">Email</span>
+                    <span className="contact-value">balajihariharanns@gmail.com</span>
+                  </div>
+                </a>
+                <a href="tel:+918754887575" className="contact-card">
+                  <div className="contact-icon">📱</div>
+                  <div className="contact-details">
+                    <span className="contact-label">Phone</span>
+                    <span className="contact-value">+91 8754887575</span>
+                  </div>
+                </a>
+                <div className="contact-card">
+                  <div className="contact-icon">📍</div>
+                  <div className="contact-details">
+                    <span className="contact-label">Location</span>
+                    <span className="contact-value">Tamil Nadu, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mobile-actions">
+              <a href="#contact" onClick={closeMobileMenu} className="mobile-primary-btn">
+                <span>Start a Project</span>
+                <div className="btn-arrow">→</div>
+              </a>
+              <a href="#projects" onClick={closeMobileMenu} className="mobile-secondary-btn">
+                <span>View Portfolio</span>
+                <div className="btn-arrow">→</div>
+              </a>
+            </div>
           </div>
         </div>
         
