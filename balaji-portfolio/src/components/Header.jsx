@@ -128,16 +128,7 @@ const Header = () => {
               </div>
             </div>
             
-            <div className="mobile-actions">
-              <a href="#contact" onClick={closeMobileMenu} className="mobile-primary-btn">
-                <span>Start a Project</span>
-                <div className="btn-arrow">→</div>
-              </a>
-              <a href="#projects" onClick={closeMobileMenu} className="mobile-secondary-btn">
-                <span>View Portfolio</span>
-                <div className="btn-arrow">→</div>
-              </a>
-            </div>
+           
           </div>
         </div>
         
