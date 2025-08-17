@@ -12,12 +12,10 @@ const Header = () => {
   }, [])
 
   const toggleMobileMenu = () => {
-    console.log('Toggle mobile menu clicked, current state:', mobileMenuOpen)
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
   const closeMobileMenu = () => {
-    console.log('Close mobile menu clicked')
     setMobileMenuOpen(false)
   }
 
@@ -29,15 +27,15 @@ const Header = () => {
           <span className="brand-gradient">Balaji</span><span className="dot"></span>
         </a>
         
-        {/* New Animated Mobile Menu Button */}
+        {/* New Modern Mobile Menu Button */}
         <button 
-          className={`mobile-menu-btn-new${mobileMenuOpen ? ' active' : ''}`}
+          className={`mobile-menu-trigger${mobileMenuOpen ? ' active' : ''}`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
-          <div className="hamburger-line"></div>
-          <div className="hamburger-line"></div>
-          <div className="hamburger-line"></div>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
         
         {/* Desktop Navigation */}
@@ -51,92 +49,88 @@ const Header = () => {
           <a href="#contact">Contact</a>
         </nav>
         
-        {/* New Slide-In Mobile Menu Panel */}
-        <div className={`mobile-menu-panel${mobileMenuOpen ? ' open' : ''}`}>
-          <div className="mobile-menu-header">
-            <div className="mobile-profile">
-              <div className="mobile-avatar">
-                <img src="/profile.jpg" alt="Balaji" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+        {/* New Modern Mobile Menu */}
+        <div className={`mobile-menu${mobileMenuOpen ? ' open' : ''}`}>
+          <div className="mobile-menu-container">
+            {/* Mobile Menu Header */}
+            <div className="mobile-header">
+              <div className="mobile-brand">
+                <img src="/logo.png" alt="Balaji" className="mobile-logo" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                <span className="mobile-brand-text">Balaji</span>
               </div>
-              <div className="mobile-profile-info">
-                <h3>Balaji Hariharan</h3>
-                <p>Software Developer</p>
-              </div>
+              <button className="mobile-close" onClick={closeMobileMenu}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
-            <button className="mobile-close-btn-new" onClick={closeMobileMenu}>
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-              </svg>
-            </button>
-          </div>
-          
-          <div className="mobile-menu-body">
-            <div className="mobile-nav-section">
-              <h4 className="mobile-section-title">Menu</h4>
-              <div className="mobile-nav-grid">
-                <a href="#about" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">👤</div>
-                  <span>About</span>
-                </a>
-                <a href="#education" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">🎓</div>
-                  <span>Education</span>
-                </a>
-                <a href="#projects" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">💻</div>
-                  <span>Projects</span>
-                </a>
-                <a href="#resume" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">📄</div>
-                  <span>Resume</span>
-                </a>
-                <a href="#certificates" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">🏆</div>
-                  <span>Certificates</span>
-                </a>
-                <a href="#skills" onClick={closeMobileMenu} className="mobile-nav-card">
-                  <div className="nav-card-icon">⚡</div>
-                  <span>Skills</span>
-                </a>
+
+            {/* Mobile Navigation */}
+            <nav className="mobile-navigation">
+              <div className="nav-section">
+                <h3 className="nav-title">Navigation</h3>
+                <div className="nav-links">
+                  <a href="#about" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">👤</div>
+                    <span>About</span>
+                  </a>
+                  <a href="#education" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">🎓</div>
+                    <span>Education</span>
+                  </a>
+                  <a href="#projects" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">💻</div>
+                    <span>Projects</span>
+                  </a>
+                  <a href="#resume" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">📄</div>
+                    <span>Resume</span>
+                  </a>
+                  <a href="#certificates" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">🏆</div>
+                    <span>Certificates</span>
+                  </a>
+                  <a href="#skills" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">⚡</div>
+                    <span>Skills</span>
+                  </a>
+                </div>
               </div>
-            </div>
-            
-            <div className="mobile-contact-section">
-              <h4 className="mobile-section-title">Get In Touch</h4>
-              <div className="mobile-contact-cards">
-                <a href="mailto:balajihariharanns@gmail.com" className="contact-card">
-                  <div className="contact-icon">📧</div>
-                  <div className="contact-details">
-                    <span className="contact-label">Email</span>
-                    <span className="contact-value">balajihariharanns@gmail.com</span>
-                  </div>
-                </a>
-                <a href="tel:+918754887575" className="contact-card">
-                  <div className="contact-icon">📱</div>
-                  <div className="contact-details">
-                    <span className="contact-label">Phone</span>
-                    <span className="contact-value">+91 8754887575</span>
-                  </div>
-                </a>
-                <div className="contact-card">
-                  <div className="contact-icon">📍</div>
-                  <div className="contact-details">
-                    <span className="contact-label">Location</span>
-                    <span className="contact-value">Tamil Nadu, India</span>
+
+              {/* Contact Section */}
+              <div className="contact-section">
+                <h3 className="contact-title">Contact Info</h3>
+                <div className="contact-items">
+                  <a href="mailto:balajihariharanns@gmail.com" className="contact-item">
+                    <div className="contact-icon">📧</div>
+                    <div className="contact-info">
+                      <span className="contact-label">Email</span>
+                      <span className="contact-value">balajihariharanns@gmail.com</span>
+                    </div>
+                  </a>
+                  <a href="tel:+918754887575" className="contact-item">
+                    <div className="contact-icon">📱</div>
+                    <div className="contact-info">
+                      <span className="contact-label">Phone</span>
+                      <span className="contact-value">+91 8754887575</span>
+                    </div>
+                  </a>
+                  <div className="contact-item">
+                    <div className="contact-icon">📍</div>
+                    <div className="contact-info">
+                      <span className="contact-label">Location</span>
+                      <span className="contact-value">Tamil Nadu, India</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="mobile-actions">
-             
-            </div>
+            </nav>
           </div>
         </div>
-        
-        {/* Mobile menu overlay */}
+
+        {/* Mobile Menu Backdrop */}
         {mobileMenuOpen && (
-          <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
+          <div className="mobile-backdrop" onClick={closeMobileMenu}></div>
         )}
       </div>
     </header>
