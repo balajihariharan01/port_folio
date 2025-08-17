@@ -14,19 +14,30 @@ import ScrollAnimations from './components/ScrollAnimations'
 function App() {
   return (
     <div className="app">
-      <ScrollAnimations />
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Education />
-        <Projects />
-        <Resume />
-        <Certificates />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="main-background" style={{
+        backgroundImage: 'url(/main-bg.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="main-overlay"></div>
+        <div className="main-content">
+          <ScrollAnimations />
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Education />
+            <Projects />
+            <Resume />
+            <Certificates />
+            <Skills />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(59, 130, 246, 0.1)"/>
+      <stop offset="100%" stop-color="rgba(16, 185, 129, 0.1)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#energyGradient)"/>
+  
+  <!-- Graph lines representing energy consumption -->
+  <path d="M50 250 L80 200 L120 180 L160 220 L200 150 L240 120 L280 100 L320 80 L350 60" 
+        stroke="rgba(59, 130, 246, 0.3)" stroke-width="2" fill="none"/>
+  
+  <!-- Data points -->
+  <circle cx="80" cy="200" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="120" cy="180" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="160" cy="220" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="200" cy="150" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="240" cy="120" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="280" cy="100" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  <circle cx="320" cy="80" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="100" cy="80" r="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <circle cx="150" cy="60" r="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <circle cx="200" cy="80" r="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <circle cx="250" cy="60" r="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <circle cx="300" cy="80" r="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  
+  <!-- Connection lines -->
+  <path d="M100 80 L150 60" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+  <path d="M150 60 L200 80" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+  <path d="M200 80 L250 60" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+  <path d="M250 60 L300 80" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+</svg>

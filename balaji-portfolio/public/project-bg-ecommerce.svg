@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="ecommerceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(245, 158, 11, 0.1)"/>
+      <stop offset="100%" stop-color="rgba(236, 72, 153, 0.1)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#ecommerceGradient)"/>
+  
+  <!-- Product cards -->
+  <rect x="50" y="50" width="80" height="120" rx="8" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(245, 158, 11, 0.3)"/>
+  <rect x="60" y="60" width="60" height="60" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+  <rect x="60" y="130" width="60" height="15" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+  <rect x="60" y="150" width="40" height="10" rx="4" fill="rgba(236, 72, 153, 0.2)"/>
+  
+  <rect x="150" y="60" width="80" height="120" rx="8" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(236, 72, 153, 0.3)"/>
+  <rect x="160" y="70" width="60" height="60" rx="4" fill="rgba(236, 72, 153, 0.2)"/>
+  <rect x="160" y="140" width="60" height="15" rx="4" fill="rgba(236, 72, 153, 0.2)"/>
+  <rect x="160" y="160" width="40" height="10" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+  
+  <rect x="250" y="50" width="80" height="120" rx="8" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(245, 158, 11, 0.3)"/>
+  <rect x="260" y="60" width="60" height="60" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+  <rect x="260" y="130" width="60" height="15" rx="4" fill="rgba(245, 158, 11, 0.2)"/>
+  <rect x="260" y="150" width="40" height="10" rx="4" fill="rgba(236, 72, 153, 0.2)"/>
+  
+  <!-- Shopping cart -->
+  <circle cx="320" cy="200" r="15" fill="rgba(236, 72, 153, 0.2)" stroke="rgba(236, 72, 153, 0.4)"/>
+  <rect x="310" y="210" width="20" height="15" rx="2" fill="rgba(236, 72, 153, 0.2)" stroke="rgba(236, 72, 153, 0.4)"/>
+  
+  <!-- Navigation menu -->
+  <rect x="50" y="200" width="60" height="8" rx="4" fill="rgba(245, 158, 11, 0.3)"/>
+  <rect x="50" y="215" width="40" height="8" rx="4" fill="rgba(245, 158, 11, 0.3)"/>
+  <rect x="50" y="230" width="50" height="8" rx="4" fill="rgba(245, 158, 11, 0.3)"/>
+  
+  <!-- Search bar -->
+  <rect x="150" y="200" width="120" height="25" rx="12" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(236, 72, 153, 0.3)"/>
+  <circle cx="260" cy="212" r="6" fill="rgba(236, 72, 153, 0.4)"/>
+  
+  <!-- Price tags -->
+  <rect x="80" y="250" width="40" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <rect x="180" y="250" width="40" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+  <rect x="280" y="250" width="40" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.4)"/>
+</svg>
