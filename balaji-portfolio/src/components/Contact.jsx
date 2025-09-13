@@ -31,7 +31,12 @@ const Contact = () => (
         <h3 className="contact-title-modern">Let's Connect!</h3>
         <p className="muted contact-desc">Open to internships, freelance gigs, and full‑time roles in frontend, full‑stack, or ML projects.</p>
         <div className="contact-methods-grid">
-          <a className="contact-method" href="mailto:balajihariharanns@gmail.com">
+          <a
+            className="contact-method"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=balajihariharanns@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="contact-method-icon">📧</span>
             <span>Email</span>
           </a>
@@ -39,7 +44,7 @@ const Contact = () => (
             <span className="contact-method-icon">🐙</span>
             <span>GitHub</span>
           </a>
-          <a className="contact-method" href="https://www.linkedin.com/in/n-s-balaji-hariharan-28109a24a/" target="_blank" rel="noreferrer">
+          <a className="contact-method" href="https://www.linkedin.com/in/balaji-hariharan-n-s-28109a24a/" target="_blank" rel="noreferrer">
             <span className="contact-method-icon">💼</span>
             <span>LinkedIn</span>
           </a>
