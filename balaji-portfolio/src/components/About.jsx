@@ -1,6 +1,6 @@
 import Section from './Section'
 
-const About = () => (
+const About  = () => (
   <Section id="about" title="About" className="about">
     <div className="about-content">
       <p>
