@@ -37,14 +37,14 @@ const Contact = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="contact-method-icon">📧</span>
+            <span className="contact-method-icon">📨</span>
             <span>Email</span>
           </a>
           <a className="contact-method" href="https://github.com/balajihariharan01" target="_blank" rel="noreferrer">
             <span className="contact-method-icon">🐙</span>
             <span>GitHub</span>
           </a>
-          <a className="contact-method" href="https://www.linkedin.com/in/balaji-hariharan-n-s-28109a24a/" target="_blank" rel="noreferrer">
+          <a className="contact-method" href="www.linkedin.com/in/balajihariharanns/" target="_blank" rel="noreferrer">
             <span className="contact-method-icon">💼</span>
             <span>LinkedIn</span>
           </a>
