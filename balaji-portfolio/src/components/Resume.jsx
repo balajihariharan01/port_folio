@@ -1,7 +1,7 @@
 import Section from './Section'
 
 const Resume = () => {
-  const pdfPath = `${import.meta.env.BASE_URL}balajihariharan.pdf`
+  const pdfPath = `${import.meta.env.BASE_URL}BALAJIHARIHARAN.pdf`
 
   return (
     <Section id="resume" title="Resume" className="resume">
