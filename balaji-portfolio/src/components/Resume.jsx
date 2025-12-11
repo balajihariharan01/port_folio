@@ -20,10 +20,10 @@ const Resume = () => (
         </ul>
         
         <div className="resume-actions">
-          <a className="btn btn-primary" href="/balaji%20(2).pdf" target="_blank" rel="noreferrer">
+          <a className="btn btn-primary" href="/balaji.pdf" target="_blank" rel="noreferrer">
             View PDF
           </a>
-          <a className="btn btn-outline" href="/balaji%20(2).pdf" download>
+          <a className="btn btn-outline" href="/balaji.pdf" download>
             Download Resume
           </a>
         </div>
