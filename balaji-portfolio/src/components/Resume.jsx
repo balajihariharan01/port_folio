@@ -6,9 +6,7 @@ const Resume = () => (
       <div className="resume-profile">
         <h3>Profile</h3>
         <p>
-          MCA student and software developer with projects in full‑stack web and deep learning (LSTM). 
-          Comfortable with React, Node.js, Python, Java, MySQL, and AWS basics. 
-          Passionate about building useful products with clean code and simple UX.
+          Motivated software developer seeking opportunities to apply strong skills in Java, Python, SQL, and full-stack development to build scalable, high-quality applications. Passionate about problem-solving, clean code practices, system optimization, and contributing to collaborative engineering teams in a dynamic IT environment.
         </p>
         
         <h4>Core Competencies</h4>
