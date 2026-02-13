@@ -16,7 +16,6 @@ const Resume = () => {
           <ul className="resume-skills">
             <li><strong>Frontend:</strong> React, Responsive UI, Components</li>
             <li><strong>Backend:</strong> Node.js/Express, REST APIs</li>
-            <li><strong>Machine Learning:</strong> LSTM time-series, TensorFlow/Keras</li>
             <li><strong>Database:</strong> SQL, MongoDB, Data Visualization</li>
             <li><strong>Cloud:</strong> AWS EC2/S3 basics</li>
             <li><strong>Quality Assurance:</strong> Manual testing, test cases, tracking</li>
