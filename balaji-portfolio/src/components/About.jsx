@@ -1,29 +1,13 @@
 import Section from './Section'
 
 const About  = () => (
-  <Section id="about" title="About" className="about">
+  <Section id="about" title="About Me" className="about">
     <div className="about-content">
-      <p>
-        I am a passionate software developer with a strong foundation in web development and machine learning. 
-        I love creating solutions that make a real difference in people's lives through clean, efficient code.
+      <p style={{ fontSize: '20px', lineHeight: '1.8', color: '#bfc9e0' }}>
+        I am an Associate Software Developer with hands-on experience in Vue.js, Slim Framework, SQL, PHP, and modern web development practices. I enjoy building scalable web applications, solving real-world problems, and continuously improving my technical skills.
       </p>
-      
       <p>
-        My journey in technology started with curiosity about how things work on the web. 
-        Today, I specialize in building responsive web applications using modern frameworks like React, 
-        and I'm always exploring new technologies to stay current with industry trends.
-      </p>
-      
-      <p>
-        When I'm not coding, you'll find me learning new programming languages, working on personal projects, 
-        or contributing to open-source communities. I believe in continuous learning and sharing knowledge 
-        with fellow developers.
-      </p>
-      
-      <p>
-        I'm currently looking for opportunities to work on challenging projects where I can apply my skills 
-        in web development, problem-solving, and creating user-friendly applications. 
-        Let's connect and build something amazing together!
+        Currently working at Linways Technologies, I focus on integrating responsive frontend views with robust backend APIs, building user-friendly web features, and designing optimized database queries for maximum application efficiency.
       </p>
     </div>
   </Section>

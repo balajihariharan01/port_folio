@@ -41,6 +41,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="nav desktop-nav">
           <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a href="#education">Education</a>
           <a href="#projects">Projects</a>
           <a href="#resume">Resume</a>
@@ -73,6 +74,10 @@ const Header = () => {
                   <a href="#about" onClick={closeMobileMenu} className="nav-link">
                     <div className="nav-icon">👤</div>
                     <span>About</span>
+                  </a>
+                  <a href="#experience" onClick={closeMobileMenu} className="nav-link">
+                    <div className="nav-icon">💼</div>
+                    <span>Experience</span>
                   </a>
                   <a href="#education" onClick={closeMobileMenu} className="nav-link">
                     <div className="nav-icon">🎓</div>
@@ -119,7 +124,7 @@ const Header = () => {
                     <div className="contact-icon">📍</div>
                     <div className="contact-info">
                       <span className="contact-label">Location</span>
-                      <span className="contact-value">Tamil Nadu, India</span>
+                      <span className="contact-value">Kochi, Kerala, India</span>
                     </div>
                   </div>
                 </div>

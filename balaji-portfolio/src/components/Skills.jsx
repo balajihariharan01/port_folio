@@ -4,48 +4,37 @@ import Section from './Section';
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
-      icon: "/logos/code.svg",
-      color: "#3b82f6",
-      skills: [
-        { name: "C", description: "System programming", logo: "/logos/c.png", color: "#2563eb" },
-        { name: "Java", description: "Enterprise solutions", logo: "/logos/java.png", color: "#dc2626" },
-        { name: "Python", description: "Versatile programming", logo: "/logos/python.jpeg", color: "#059669" },
-        { name: "JavaScript", description: "Dynamic programming", logo: "/logos/js.png", color: "#ca8a04" },
-        { name: "PHP", description: "Web development", logo: "/logos/php.png", color: "#7c3aed" }
-      ]
-    },
-    {
-      title: "Web Technologies",
+      title: "Frontend Development",
       icon: "/logos/web.svg",
       color: "#10b981",
       skills: [
+        { name: "Vue.js", description: "Frontend framework", logo: "/logos/vue.svg", color: "#42b883" },
+        { name: "JavaScript", description: "Dynamic programming", logo: "/logos/js.png", color: "#ca8a04" },
         { name: "HTML", description: "Semantic markup", logo: "/logos/html.png", color: "#ea580c" },
         { name: "CSS", description: "Styling & layout", logo: "/logos/css.png", color: "#2563eb" },
-        { name: "React", description: "Frontend framework", logo: "/logos/react.svg", color: "#0891b2" },
+        { name: "React", description: "Frontend library", logo: "/logos/react.svg", color: "#0891b2" }
+      ]
+    },
+    {
+      title: "Backend Development",
+      icon: "/logos/code.svg",
+      color: "#3b82f6",
+      skills: [
+        { name: "PHP", description: "Server-side scripting", logo: "/logos/php.png", color: "#7c3aed" },
+        { name: "Slim Framework", description: "PHP micro-framework", logo: "/logos/slim.png", color: "#a78bfa" },
+        { name: "REST APIs", description: "Application interfaces", logo: "/logos/api.svg", color: "#ec4899" },
         { name: "Node.js", description: "Backend runtime", logo: "/logos/node.png", color: "#059669" }
       ]
     },
     {
-      title: "Development Tools",
-      icon: "/logos/tools.svg",
-      color: "#f59e0b",
-      skills: [
-        { name: "VS Code", description: "Code editor", logo: "/logos/vs code.jpeg", color: "#2563eb" },
-        { name: "Eclipse", description: "Java IDE", logo: "/logos/eclipse.png", color: "#ea580c" },
-        { name: "Git", description: "Version control", logo: "/logos/git.png", color: "#dc2626" },
-        { name: "Docker", description: "Containerization", logo: "/logos/docker.png", color: "#2563eb" }
-      ]
-    },
-    {
-      title: "Database & Cloud",
+      title: "Databases & Tools",
       icon: "/logos/database.svg",
       color: "#8b5cf6",
       skills: [
         { name: "SQL", description: "Database queries", logo: "/logos/sql.png", color: "#2563eb" },
-        { name: "MongoDB", description: "NoSQL database", logo: "/logos/mongo.png", color: "#059669" },
-        { name: "AWS EC2", description: "Cloud computing", logo: "/logos/aws.png", color: "#ea580c" },
-        { name: "AWS S3", description: "Cloud storage", logo: "/logos/aws.png", color: "#ea580c" }
+        { name: "MySQL", description: "Relational database", logo: "/logos/mysql.png", color: "#00758f" },
+        { name: "Git", description: "Version control", logo: "/logos/git.png", color: "#dc2626" },
+        { name: "GitHub", description: "Code collaboration", logo: "/logos/github.svg", color: "#bfc9e0" }
       ]
     }
   ];
@@ -55,7 +44,7 @@ const Skills = () => {
       <div className="skills-hero">
         <div className="skills-intro">
           <h3>My Technical Expertise</h3>
-          <p>From programming languages to cloud technologies, I've built a diverse skill set to tackle any development challenge.</p>
+          <p>From frontend frameworks to backend APIs and databases, here are the key technologies I work with daily.</p>
         </div>
       </div>
       
@@ -113,7 +102,7 @@ const Skills = () => {
           </div>
           <div className="summary-content">
             <h4>Skill Overview</h4>
-            <p>Proficient in 16+ technologies across 4 major categories</p>
+            <p>Proficient in 13+ technologies across 3 major categories</p>
           </div>
         </div>
         <div className="summary-card">

@@ -9,16 +9,15 @@ const Resume = () => {
         <div className="resume-profile">
           <h3>Profile</h3>
           <p>
-            Motivated software developer seeking opportunities to apply strong skills in Java, Python, SQL, and full-stack development to build scalable, high-quality applications. Passionate about problem-solving, clean code practices, system optimization, and contributing to collaborative engineering teams in a dynamic IT environment.
+            Associate Software Developer with experience in Vue.js, Slim Framework, PHP, and SQL. Passionate about building efficient web applications, learning modern technologies, and contributing to impactful software solutions.
           </p>
 
           <h4>Core Competencies</h4>
           <ul className="resume-skills">
-            <li><strong>Frontend:</strong> React, Responsive UI, Components</li>
-            <li><strong>Backend:</strong> Node.js/Express, REST APIs</li>
-            <li><strong>Database:</strong> SQL, MongoDB, Data Visualization</li>
-            <li><strong>Cloud:</strong> AWS EC2/S3 basics</li>
-            <li><strong>Quality Assurance:</strong> Manual testing, test cases, tracking</li>
+            <li><strong>Frontend:</strong> Vue.js, JavaScript, HTML5, CSS3, React</li>
+            <li><strong>Backend:</strong> Slim Framework, PHP, REST APIs, Node.js</li>
+            <li><strong>Database:</strong> SQL, MySQL, MongoDB</li>
+            <li><strong>Tools & VC:</strong> Git, GitHub, VS Code</li>
           </ul>
 
           <div className="resume-actions">
